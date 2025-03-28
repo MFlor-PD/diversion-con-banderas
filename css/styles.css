@@ -8,3 +8,56 @@ body {
 h1 {
   color: #333;
 }
+
+#countries-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  grid-gap: 10px;
+ 
+}
+
+.countries {
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: space-between;
+  margin: 20px;
+  transition: transform 0.8 ease-in-out;
+  position: relative; 
+}
+
+
+.countries img {
+  max-width: 90%; 
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+.country-details {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: 
+    opacity 0.5s ease-in-out, 
+    visibility 0.5s ease-in-out, 
+    max-height 0.5s ease-in-out, 
+    padding 0.5s ease-in-out;
+}
+.countries:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+.countries:hover .country-details {
+  opacity: 1;
+  visibility: visible;
+  max-height: fit-content;
+  padding: 10px;
+}
