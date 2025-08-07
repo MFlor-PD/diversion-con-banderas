@@ -1,18 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restcountries App</title>
+  <title>Diversión con Banderas - Explorador de Países</title>
   <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <h1>Información sobre Países</h1>
-  <div id="countries-list"></div>
-<div id ="float-container" class="float-container">
-  <div id="float"class="float"></div>
-  <button id="close" class="close">Cerrar</button>
-</div>
+  <header class="header">
+    <div class="container">
+      <h1 class="title">
+        <i class="fas fa-globe-americas"></i>
+        Diversión con Banderas
+      </h1>
+      <p class="subtitle">Explora países del mundo y descubre sus características únicas</p>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <i class="fas fa-flag"></i>
+          <span id="total-countries">0</span>
+          <span>Países</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-users"></i>
+          <span id="total-population">0</span>
+          <span>Población Mundial</span>
+        </div>
+      </div>
+      
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="search-input" placeholder="Buscar país...">
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-globe"></i>
+            Todos
+          </button>
+          <button class="filter-btn" data-filter="left">
+            <i class="fas fa-car"></i>
+            Conducción Izquierda
+          </button>
+          <button class="filter-btn" data-filter="right">
+            <i class="fas fa-car"></i>
+            Conducción Derecha
+          </button>
+        </div>
+      </div>
+
+      <div id="countries-list" class="countries-grid"></div>
+    </div>
+  </main>
+
+  <div id="float-container" class="float-container">
+    <div id="float" class="float">
+      <div class="float-header">
+        <h2 id="float-title">Detalles del País</h2>
+        <button id="close" class="close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="float-content" class="float-content"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Diversión con Banderas. Desarrollado con ❤️ usando la API de RestCountries</p>
+    </div>
+  </footer>
+
   <script src="./js/script.js"></script>
 </body>
 </html>
